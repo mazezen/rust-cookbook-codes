@@ -1,4 +1,5 @@
 mod generate;
+mod sort_vector;
 
 fn main() {
     // generate random values
@@ -19,4 +20,13 @@ fn main() {
 
     // create random password from a set of user-defined characters
     generate::create_random_password_from_a_set_of_user_defined_characters();
+
+    // sort a vector of integers
+    sort_vector::sort_vector_integers();
+
+    // sort a vector of floats
+    sort_vector::sort_vector_float();
+
+    // sort a vecrot of structs
+    sort_vector::sort_vecrot_struct();
 }

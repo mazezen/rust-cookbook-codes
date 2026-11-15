@@ -1,7 +1,7 @@
-use std::{println};
 use rand::{Rng, RngExt, distr::Alphanumeric};
-use rand_distr::{Distribution, Uniform, LogNormal, Normal};
-    
+use rand_distr::{Distribution, LogNormal, Normal, Uniform};
+use std::println;
+
 pub fn generate_random_values() {
     let mut rng = rand::rng();
     let random_number: u8 = rng.random();
@@ -16,14 +16,15 @@ pub fn generate_random_numbers_within_a_range() {
 
 pub fn generate_random_number_within_a_range_uniform() {
     let mut rng = rand::rng();
-    let die = 
+    let die =
         Uniform::new_inclusive(1, 6).expect("Failed to create uniform distribution: invalid range");
-    
-    let float_die = Uniform::new_inclusive(0.0, 6.0).expect("Failed to create uniform distribution: invalid range");
+
+    let float_die = Uniform::new_inclusive(0.0, 6.0)
+        .expect("Failed to create uniform distribution: invalid range");
 
     let throw = die.sample(&mut rng);
     println!("Uniform Integer: {}", throw);
-    
+
     let float_random = float_die.sample(&mut rng);
     println!("Unform Float: {}", float_random);
 
@@ -40,7 +41,7 @@ pub fn generate_random_numbers_with_given_distribution() {
     let mut rng = rand::rng();
     let normal = Normal::new(2.0, 3.0).expect("Failed to create normal distribtion");
     let log_normal = LogNormal::new(1.0, 0.5).expect("Failed to create log-normal distributin");
-    
+
     let v = normal.sample(&mut rng);
     println!("{} is from a N(2, 9) distribution", v);
     let v = log_normal.sample(&mut rng);
@@ -48,11 +49,17 @@ pub fn generate_random_numbers_with_given_distribution() {
 }
 
 #[derive(Debug)]
-struct Point {x: i32, y: i32}
+struct Point {
+    x: i32,
+    y: i32,
+}
 
 impl Point {
     fn random<R: Rng>(rng: &mut R) -> Self {
-        Point { x: rng.random(), y: rng.random() }
+        Point {
+            x: rng.random(),
+            y: rng.random(),
+        }
     }
 }
 
@@ -79,7 +86,7 @@ pub fn create_random_password_from_a_set_of_alphanumeric_characters() {
 }
 
 pub fn create_random_password_from_a_set_of_user_defined_characters() {
-    const CHARSET:  &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+    const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                         abcdefghijklmnopqrstuvwxyz\
                         0123456789)(*&^%$#@!~";
     const PASSWORD_LEN: usize = 30;
