@@ -1,0 +1,10 @@
+[package]
+name = "compression-examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+bzip2 = "0.6.1"
+flate2 = "1.1.11"
+tar = "0.4.46"

@@ -2,3 +2,8 @@
 target
 data.txt
 my_dir
+archive.tar.gz
+input.txt
+input2.txt
+input.txt.gz
+input.txt.bz2
