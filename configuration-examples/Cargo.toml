@@ -1,0 +1,13 @@
+[package]
+name = "configuration-examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.105"
+config = "0.15.27"
+confy = "2.0.0"
+figment = { version = "0.10.19", features = ["env", "test", "toml"] }
+notify = "9.0.0"
+notify-debouncer-full = "0.8.0"
+serde = { version = "1.0.229", features = ["derive"] }
