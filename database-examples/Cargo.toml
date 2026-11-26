@@ -1,0 +1,10 @@
+[package]
+name = "database-examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+postgres = "0.19.14"
+rusqlite = "0.32"
+sqlx = { version = "0.8.6", features = ["sqlite", "postgres", "runtime-tokio"] }
+tokio = { version = "1.54.1", features = ["full"] }
