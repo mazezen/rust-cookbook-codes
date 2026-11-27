@@ -1,0 +1,9 @@
+[package]
+name = "date-time-examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = "0.4.45"
+jiff = "1.0.3"
+time = "0.3.55"
