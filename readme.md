@@ -11,4 +11,6 @@ Examples of the Rust programming language.
 
 . [The Rustonomicon](https://doc.rust-lang.org/nomicon/)
 
+. [Rust Docs](https://docs.rs/)
+
 
